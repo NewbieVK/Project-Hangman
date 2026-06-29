@@ -5,7 +5,7 @@ This will require understanding of: - Arrays - Iterators - DOM maniuplation - Ev
 
 MVP
 
-A representation of the word made up of underscore (\_) characters should display on the screen.
+A representation of the word made up of (\*) characters should display on the screen.
 Create a user interface made up of buttons representing all 26 letters of the alphabet.
 Clicking a button should register its letter as a 'guess'
 If the letter clicked is in the word each underscore corresponding to that letter should be replaced with the letter.
