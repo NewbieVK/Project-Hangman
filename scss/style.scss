@@ -1,3 +1,13 @@
+// 1. Core Config Setup
+@use "./partials/variables";
+@use "./partials/fonts";
+
+@use "./sections/header";
+@use "./sections/container"; // This points directly to your hangman image box layout
+@use "./sections/word";
+@use "./sections/attempts";
+@use "./sections/keyboard";
+
 body {
   background-color: bisque;
   margin: auto;
@@ -5,40 +15,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: rgb(61, 58, 58);
-}
+  padding: 10px;
 
-.container {
-  width: 80%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
-  border-radius: 5px;
-}
-
-#word-display {
-  font-size: 3rem;
-  font-weight: bold;
-  letter-spacing: 15px;
-  text-align: center;
-  margin: 30px 0;
-  min-height: 50px;
-}
-
-.letter-btn:disabled,
-.letter-btn.disabled {
-  background-color: #d3d3d3; /* Light grey background */
-  color: #a1a1a1; /* Muted grey text */
-  cursor: not-allowed; /* Changes cursor to a stop sign */
-  border-color: #b5b5b5;
+  @include variables.respond-to("tablet") {
+    padding: 20px;
+  }
 }

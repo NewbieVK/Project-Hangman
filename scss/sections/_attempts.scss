@@ -1,0 +1,11 @@
+#lives-counter {
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
+  display: inline-block;
+
+  // Adds a little organic pop whenever the value shifts
+  &.pulse {
+    transform: scale(1.2);
+  }
+}
