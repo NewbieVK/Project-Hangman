@@ -5,9 +5,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: rgb(61, 58, 58);
+  color: variables.$text-light;
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   margin-bottom: 15px;
 
   h1 {

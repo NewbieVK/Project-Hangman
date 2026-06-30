@@ -1,8 +1,8 @@
 // Colors
-$bg-color: bisque;
-$text-dark: rgb(61, 58, 58);
-$warning-red: #d9534f;
-$btn-hover: #2c3e50;
+$bg-color: #1a1a24; // Deep midnight charcoal
+$text-light: #f4ece1; // Off-white retro text
+$warning-red: #ff4757; // Vibrant arcade red
+$btn-hover: #4b7bec; // Megaman blue
 
 // Breakpoints
 $breakpoints: (
@@ -13,6 +13,7 @@ $breakpoints: (
   "desktop": 1440px,
   "ultra-4k": 2560px,
 );
+
 @mixin respond-to($size) {
   @media (min-width: map-get($breakpoints, $size)) {
     @content;

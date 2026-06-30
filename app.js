@@ -1,14 +1,11 @@
-// ==========================================
 // 1. GLOBAL STATE VARIABLES
-// ==========================================
+
 let chosenWord = "";
 let guessedLetters = [];
 let livesRemaining = 10;
 let isGameOver = false;
 
-// ==========================================
 // 2. GAME INITIALIZATION / FLOW
-// ==========================================
 
 // Start the process as soon as the script loads
 loadGameWords();
@@ -30,9 +27,7 @@ function pickRandomWord(words) {
   generateKeyboard();
 }
 
-// ==========================================
 // 3. DYNAMIC DOM RENDERING
-// ==========================================
 
 function displayWordBlanks() {
   const wordDisplay = document.getElementById("word-display");
@@ -73,9 +68,7 @@ function generateKeyboard() {
   });
 }
 
-// ==========================================
 // 4. CORE GAME ENGINE LOGIC
-// ==========================================
 
 function handleGuess(letter) {
   letter = letter.toUpperCase();
@@ -117,7 +110,7 @@ function handleGuess(letter) {
 
     if (hangmanImage) {
       // Updates the image path dynamically using a template literal
-      hangmanImage.src = `./assets/img/h-${imageNumber}.jpg`;
+      hangmanImage.src = `assets/img/h-${imageNumber}.jpg`;
       hangmanImage.alt = `hangman stage ${imageNumber}`;
     }
 
@@ -140,16 +133,18 @@ function endGame(isWin) {
   isGameOver = true;
 
   if (isWin) {
-    alert("Congratulations! You guessed the word!");
+    alert(
+      "Congratulations! You guessed the word! \nRefresh the page to play again =)",
+    );
   } else {
-    alert("You are dead. Refresh the page to try again!");
+    alert(
+      `You are dead. The correct word was: ${chosenWord}. \nRefresh the page to try again!`,
+    );
     window.location.reload(); // Refresh window to reset game state
   }
 }
 
-// ==========================================
 // 5. GLOBAL EVENT LISTENERS
-// ==========================================
 
 window.addEventListener("keydown", (event) => {
   const key = event.key.toUpperCase();

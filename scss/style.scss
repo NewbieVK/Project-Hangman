@@ -9,13 +9,14 @@
 @use "./sections/keyboard";
 
 body {
-  background-color: bisque;
+  background-color: variables.$bg-color;
+  color: variables.$text-light;
+  font-family: "Courier New", Courier, monospace;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 10px;
 
   @include variables.respond-to("tablet") {
