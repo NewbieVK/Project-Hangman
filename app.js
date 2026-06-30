@@ -99,6 +99,28 @@ function handleGuess(letter) {
     checkWinCondition();
   } else {
     livesRemaining--;
+
+    // 1. Find the counter element on the screen
+    const counterElement = document.getElementById("lives-counter");
+
+    // 2. Update the text number
+    counterElement.innerText = livesRemaining;
+
+    // 3. Check if lives are low and switch the color to red
+    if (livesRemaining <= 3) {
+      counterElement.style.color = "#d9534f"; // Warning red color
+      counterElement.style.fontWeight = "bold"; // Optional: make it pop extra!
+    }
+    // 🚀 2. DYNAMICALLY SWAP THE HANGMAN IMAGE HERE
+    const imageNumber = 10 - livesRemaining; // Calculates 1, 2, 3, etc.
+    const hangmanImage = document.getElementById("hangman-pic");
+
+    if (hangmanImage) {
+      // Updates the image path dynamically using a template literal
+      hangmanImage.src = `./assets/img/h-${imageNumber}.jpg`;
+      hangmanImage.alt = `hangman stage ${imageNumber}`;
+    }
+
     console.log(`Wrong guess! Lives remaining: ${livesRemaining}`);
 
     if (livesRemaining <= 0) {
@@ -120,7 +142,7 @@ function endGame(isWin) {
   if (isWin) {
     alert("Congratulations! You guessed the word!");
   } else {
-    alert("You are dead. Let's try again!");
+    alert("You are dead. Refresh the page to try again!");
     window.location.reload(); // Refresh window to reset game state
   }
 }

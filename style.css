@@ -33,4 +33,12 @@ body {
   text-align: center;
   margin: 30px 0;
   min-height: 50px;
+}
+
+.letter-btn:disabled,
+.letter-btn.disabled {
+  background-color: #d3d3d3; /* Light grey background */
+  color: #a1a1a1; /* Muted grey text */
+  cursor: not-allowed; /* Changes cursor to a stop sign */
+  border-color: #b5b5b5;
 }/*# sourceMappingURL=style.css.map */

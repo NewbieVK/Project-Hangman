@@ -10,8 +10,8 @@
 
   <body>
     <section class="header">
-      <h1>Wlcome to the Hangman Game</h1>
-      <h2>You have 10 Attempts</h2>
+      <h1>Welcome to the Hangman Game</h1>
+      <h2>You have <span id="lives-counter">10</span> Attempts</h2>
       <p>
         Intruction: You have 10 attempts to guess a word generated randomly. If
         you cannot guess the correct answer within 10 attempts, you are dead.
@@ -19,7 +19,7 @@
       </p>
     </section>
     <section class="container">
-      <img src="./assets/img/h-0.jpg" alt="hangman stage 0" />
+      <img id="hangman-pic" src="assets/img/h-0.jpg" alt="hangman stage 0" />
     </section>
     <section class="word" id="word-display"></section>
     <section class="keyboard" id="keyboard-container"></section>
